@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: yagnakanthpipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yagnakanthpipeline
+  template:
+    metadata:
+      labels:
+        app: yagnakanthpipeline 
+    spec:
+      containers:
+        - name: yagnakanthpipeline 
+          image: yagnasample.azurecr.io/yagnakanthpipeline
+          ports:
+          - containerPort: 80
